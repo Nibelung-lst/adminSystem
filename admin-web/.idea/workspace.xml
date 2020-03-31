@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ef114412-f9f7-4243-9d29-e09edb015e0c" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1Sd8OG2fwlLMTk97KPE6p3t7BBg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\ttt6-luckinshop\admin-web\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="ts.external.directory.path" value="C:\WebStorm\WebStorm 2019.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\ttt6-luckinsho2\admin-web\src\components\marketing" />
+      <recent name="C:\ttt6-luckinshop\admin-web\src\components\product" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\system\admin-web\src\components\admin" />
+      <recent name="C:\ttt6-luckinshop\admin-web\src\components\product" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="test.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/admin-web/src/components/product/test.vue" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.test.vue" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef114412-f9f7-4243-9d29-e09edb015e0c" name="Default Changelist" comment="" />
+      <created>1571882078131</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571882078131</updated>
+      <workItem from="1571882079301" duration="377000" />
+      <workItem from="1571882488889" duration="477000" />
+      <workItem from="1571883058862" duration="10000" />
+      <workItem from="1571883081072" duration="17961000" />
+      <workItem from="1571963833538" duration="12711000" />
+      <workItem from="1571991001367" duration="7672000" />
+      <workItem from="1572051021661" duration="843000" />
+      <workItem from="1572053261227" duration="19071000" />
+      <workItem from="1572083122023" duration="614000" />
+      <workItem from="1572331332496" duration="8632000" />
+      <workItem from="1572398403819" duration="28277000" />
+      <workItem from="1572482314510" duration="18354000" />
+      <workItem from="1572505915010" duration="5389000" />
+      <workItem from="1572829062697" duration="5135000" />
+      <workItem from="1572846800348" duration="617000" />
+      <workItem from="1572847751599" duration="5658000" />
+      <workItem from="1572915358795" duration="11375000" />
+      <workItem from="1573001619241" duration="2492000" />
+      <workItem from="1573006742163" duration="1157000" />
+      <workItem from="1573008845118" duration="20810000" />
+      <workItem from="1573089030827" duration="13202000" />
+      <workItem from="1573176078044" duration="14561000" />
+      <workItem from="1573261451396" duration="3793000" />
+      <workItem from="1573289266518" duration="2369000" />
+      <workItem from="1573464315786" duration="2096000" />
+      <workItem from="1573524551960" duration="19946000" />
+      <workItem from="1573606830633" duration="1124000" />
+      <workItem from="1573615503620" duration="677000" />
+      <workItem from="1573697352463" duration="1678000" />
+      <workItem from="1573703650539" duration="8741000" />
+      <workItem from="1573782449805" duration="8942000" />
+      <workItem from="1574037197793" duration="5396000" />
+      <workItem from="1574056369250" duration="1392000" />
+      <workItem from="1574130319561" duration="531000" />
+      <workItem from="1574131108363" duration="2159000" />
+      <workItem from="1574134417324" duration="7825000" />
+      <workItem from="1574213557439" duration="3551000" />
+      <workItem from="1574923627052" duration="41000" />
+      <workItem from="1583806677213" duration="6517000" />
+      <workItem from="1583817059825" duration="3820000" />
+      <workItem from="1584325196492" duration="7326000" />
+      <workItem from="1584429846393" duration="765000" />
+      <workItem from="1584501373684" duration="638000" />
+      <workItem from="1585105659029" duration="20709000" />
+      <workItem from="1585184727833" duration="6734000" />
+      <workItem from="1585199506671" duration="990000" />
+      <workItem from="1585207797651" duration="8390000" />
+      <workItem from="1585278554086" duration="3351000" />
+      <workItem from="1585303531445" duration="2203000" />
+      <workItem from="1585361512103" duration="39835000" />
+      <workItem from="1585479881287" duration="140000" />
+      <workItem from="1585646400903" duration="2459000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

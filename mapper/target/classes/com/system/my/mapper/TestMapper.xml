@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.system.my.mapper.TestMapper">
+    <!--返回值类型-->
+    <resultMap id="BaseResultMap" type="com.system.my.base.test">
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+    </resultMap>
+    <!--查询全部数据-->
+    <select id="select" resultMap="BaseResultMap">
+    select
+    name,password
+    from t_admin
+  </select>
+
+</mapper>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.system.my.mapper.hrMapper.HrMapper">
+    <resultMap id="BaseResultMap" type="com.system.my.base.admin.dto.Hr">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="CHAR"/>
+        <result column="telephone" property="telephone" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="enabled" property="enabled" jdbcType="BIT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="userface" property="userFace" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="adminMap" type="com.system.my.base.admin.dto.AdminDTO">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="CHAR"/>
+        <result column="telephone" property="telephone" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="enabled" property="enabled" jdbcType="BIT"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="userface" property="userFace" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="HrWithRoles" type="com.system.my.base.admin.dto.Hr" extends="BaseResultMap">
+        <collection property="roles" ofType="com.system.my.base.admin.dto.Role">
+            <id column="rid" property="id"/>
+            <result column="rname" property="name"/>
+            <result column="rnameZh" property="nameZh"/>
+        </collection>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, name, phone, telephone, address, enabled, username, password, userface, remark
+  </sql>
+    <select id="getAllUser" resultMap="adminMap">
+        select * from hr
+    </select>
+    <select id="getRolesByUserName" resultType="java.lang.Integer" parameterType="java.lang.String">
+        SELECT r.rid FROM hr h INNER JOIN hr_role r ON h.id=r.hrid WHERE h.`username`=#{username,jdbcType=VARCHAR}
+    </select>
+    <select id="getHrRolesById" resultType="com.system.my.base.admin.dto.Role">
+    select r.* from role r,hr_role hrr where hrr.`rid`=r.`id` and hrr.`hrid`=#{id}
+  </select>
+    <select id="loadUserByUsername" resultMap="BaseResultMap">
+    select * from hr where username=#{username}
+  </select>
+    <select id="checkAdmin" parameterType="java.lang.String" resultType="java.lang.Boolean">
+        <![CDATA[ select count(id) from hr where username = #{username, jdbcType=VARCHAR}]]>
+    </select>
+    <insert id="addAdmin" parameterType="com.system.my.base.admin.dto.AdminDTO" useGeneratedKeys="true" keyProperty="id">
+    insert into hr (name,phone,telephone,address,enabled,username,password,remark)
+    values (#{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR},#{telephone,jdbcType=VARCHAR}
+    ,#{address,jdbcType=VARCHAR},#{enabled,jdbcType=TINYINT},#{username,jdbcType=VARCHAR},
+    #{password,jdbcType=VARCHAR},#{remark,jdbcType=VARCHAR})
+    </insert>
+</mapper>

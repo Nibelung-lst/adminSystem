@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>system</artifactId>
+        <groupId>com.system.my</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>service</artifactId>
+
+    <properties>
+        <base.version>0.0.1-SNAPSHOT</base.version>
+        <mapper.version>0.0.1-SNAPSHOT</mapper.version>
+        <pagehelper.version>5.1.2-beta</pagehelper.version>
+        <mybatis.version>3.1.1</mybatis.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.system.my</groupId>
+            <artifactId>mapper</artifactId>
+            <version>${mapper.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.system.my</groupId>
+            <artifactId>base</artifactId>
+            <version>${base.version}</version>
+        </dependency>
+
+        <!-- pageHelper -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.29</version>
+        </dependency>
+    </dependencies>
+
+
+
+
+</project>
