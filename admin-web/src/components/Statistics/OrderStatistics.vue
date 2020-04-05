@@ -109,7 +109,7 @@
         </el-card>
       </el-col>
     </el-row>
-    
+
     <el-row style="margin-top: 30px">
       <el-col :span="20" :offset="2">
         <el-card class="box-card">
@@ -178,17 +178,17 @@ export default {
     },
     _loadData () {
       reqCountOrdersByDay().then(res => {
-        if (res.code === 0 && res.data != null) {
+        if (res.status === 200 && res.data != null) {
           this.countOrdersByDay = res.data
         }
       })
       reqCountOrdersByStatus().then(res => {
-        if (res.code === 0 && res.data != null) {
+        if (res.status === 200 && res.data != null) {
           this.countOrdersByStatus = res.data
         }
       })
       reqListYears().then(res => {
-        if (res.code === 0 && res.data != null) {
+        if (res.status === 200 && res.data != null) {
           let i = 0
           let arr = []
           res.data.forEach (e => {
@@ -205,7 +205,7 @@ export default {
       let params =new URLSearchParams
       params.append('year',this.year)
       reqListMonthSalesByYears(params).then( res => {
-        if (res.code === 0 && res.data != null) {
+        if (res.status === 200 && res.data != null) {
           let countArr = []
           let saleArr = []
           res.data.forEach (e => {
@@ -230,8 +230,8 @@ export default {
         color: ['#3398DB'],
         tooltip : {
             trigger: 'axis',
-            axisPointer : {            
-                type : 'shadow'        
+            axisPointer : {
+                type : 'shadow'
             }
         },
         grid: {

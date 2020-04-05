@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.system.my.mapper.orderMapper.OrderMapper">
+    <sql id="OrderMap">
+        id as id,
+        order_code as orderCode,
+        type as type,
+        points as points,
+        user_id as userId,
+        name as name,
+        address as address,
+        phone as phone,
+        original_price as originalPrice,
+        coupon_code as couponCode,
+        coupon_name as couponName,
+        discount as discount,
+        truth_price as truthPrice,
+        create_time as createTime,
+        cancel_time as cancelTime,
+        pay_time as payTime,
+        deliver_time as deliverTime,
+        finish_time as finishTime,
+        cancel_reason as cancelReason,
+        status as status
+    </sql>
+
+    <!--  订单查询条件  -->
+    <sql id="queryParam">
+        <where>
+            <if test="type != null">
+                type = #{type}
+            </if>
+            <if test="status !=null">
+                status = #{status}
+            </if>
+        </where>
+    </sql>
+
+    <!--  获取所有订单  -->
+    <select id="listOrders" parameterType="com.system.my.base.order.dto.SearchOrderDTO" resultType="com.system.my.base.order.dto.OrderDO">
+        select
+        <include refid="OrderMap"/>
+        from t_order
+        <include refid="queryParam"/>
+        limit #{start}, #{size}
+    </select>
+
+    <!--  计算搜索订单个数  -->
+    <select id="countListOrders" parameterType="com.system.my.base.order.dto.SearchOrderDTO" resultType="java.lang.Integer">
+        select count(id)
+        from t_order
+        <include refid="queryParam"/>
+    </select>
+
+    <!--  统计订单年份  -->
+    <select id="listYears" resultType="java.lang.Integer">
+        select year(create_time)
+        from t_order
+        group by year(create_time)
+    </select>
+
+    <!--  根据年份统计每月销量  -->
+    <select id="listMonthSalesByYears" parameterType="java.lang.Integer" resultType="com.system.my.base.order.dto.OrderMonthSalesVO">
+        select
+            month(create_time) as month,
+            sum(truth_price) as sale,
+            count(id) as count
+        from
+            t_order
+        where
+            year(create_time) = #{year}
+        group by
+            year(create_time), month(create_time)
+    </select>
+
+    <!--  统计商品每月销量  -->
+    <select id="listSpuMonthSales" parameterType="com.system.my.base.order.dto.StatisticalSpuSaleDTO" resultType="com.system.my.base.order.dto.SpuMonthSalesVO">
+        select
+            t_order_detail.spu_name as spuName,
+            sum(t_order_detail.sku_num) as spuCount,
+            sum(t_order_detail.current_price) as spuSale
+        from
+            t_order_detail
+        inner join t_order on t_order_detail.order_code = t_order.order_code
+        where
+            year(t_order.create_time) = #{year} and month(t_order.create_time) = #{month}
+        group by
+            t_order_detail.spu_name
+    </select>
+
+    <!--  根据spuCode，获取当前月销量  -->
+    <select id="countSpuCodeByMonth" resultType="java.lang.Integer">
+        select sum(t_order_detail.sku_num)
+        from t_order_detail
+        inner join t_order on t_order_detail.order_code = t_order.order_code
+        where t_order_detail.spu_code = #{spuCode} and year(t_order.create_time) = year(now()) and month(t_order.create_time) = month(now())
+    </select>
+
+    <!--  根据订单状态，获取订单总数  -->
+    <select id="countOrdersByStatus" resultType="java.lang.Integer">
+        select count(id)
+        from t_order
+        where `status` = #{status}
+    </select>
+
+    <!--  获取今日订单数  -->
+    <select id="countOrdersByToday" resultType="java.lang.Integer">
+        select count(id)
+        from t_order
+        where to_days(create_time) = to_days(now())
+    </select>
+
+    <!--  获取今日订单总额  -->
+    <select id="getOrdersPriceByToday" resultType="java.math.BigDecimal">
+        select sum(truth_price)
+        from t_order
+        where to_days(create_time) = to_days(now())
+    </select>
+
+    <!--  获取昨日订单总额  -->
+    <select id="getOrdersPriceByYesterday" resultType="java.math.BigDecimal">
+        select sum(truth_price)
+        from t_order
+        where to_days(now()) - to_days(create_time) = 1
+    </select>
+
+    <!--  根据用户参数，获取用户订单  -->
+    <select id="listOrdersByUser" resultType="com.system.my.base.order.dto.OrderDO">
+        select
+        <include refid="OrderMap"/>
+        from t_order
+        where user_id = #{userId}
+        <if test="status !=null" >
+            and `status` = #{status}
+        </if>
+    </select>
+
+    <!--  根据订单编号，获取订单  -->
+    <select id="getOrderByCode" parameterType="java.lang.String" resultType="com.system.my.base.order.dto.OrderDO">
+        select
+        <include refid="OrderMap"/>
+        from t_order
+        where order_code = #{orderCode}
+    </select>
+
+    <!--  提交订单插入数据库  -->
+    <insert id="insertOrder">
+        insert into t_order
+        (order_code,type,points,user_id,name,address,phone,original_price,coupon_code,coupon_name,discount,truth_price,create_time,status)
+        values
+        (#{orderCode},#{type},#{points},#{userId},#{name},#{address},#{phone},#{originalPrice},#{couponCode},#{couponName},#{discount},#{truthPrice},now(),1)
+    </insert>
+
+    <!--  根据订单编号，修改订单状态为支付状态  -->
+    <update id="updatePayOrder" parameterType="java.lang.String">
+        update t_order
+        set `status` = 2, pay_time = now()
+        where order_code = #{orderCode}
+    </update>
+
+    <!--  根据订单编号，修改订单状态为发货状态  -->
+    <update id="updateDeliverOrder" parameterType="java.lang.String">
+        update t_order
+        set `status` = 3, deliver_time = now()
+        where order_code = #{orderCode}
+    </update>
+
+    <!--  根据订单编号，修改订单状态为收货状态  -->
+    <update id="updateReceiveOrder" parameterType="java.lang.String">
+        update t_order
+        set `status` = 4, finish_time = now()
+        where order_code = #{orderCode}
+    </update>
+
+    <!--  根据订单编号，修改订单状态为评价（完成）状态  -->
+    <update id="updateEvaluateOrder" parameterType="java.lang.String">
+        update t_order
+        set `status` = 5
+        where order_code = #{orderCode}
+    </update>
+
+    <!--  根据订单编号，修改订单状态为取消状态  -->
+    <update id="updateCancelOrder" parameterType="com.system.my.base.order.dto.CancelOrderDTO">
+        update t_order
+        set `status` = -1, cancel_time = now(), cancel_reason = #cancelReason#
+        where order_code = #{orderCode}
+    </update>
+</mapper>

@@ -65,25 +65,6 @@ menuRouterList = [
     ]
   },
   {
-    path: '/product',
-    name: 'product',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Layout.vue'),
-    meta: {
-      title: '门店信息管理',
-      authNo: ''
-    },
-    children: [
-      {
-        path: 'category',
-        name: 'productCategory',
-        component: () => import(/* webpackChunkName: "about" */ '../components/product/Category.vue'),
-        meta: {
-          title: '门店信息'
-        }
-      },
-    ]
-  },
-  {
     path: '/commodity',
     name: 'commodity',
     component: () => import(/* webpackChunkName: "about" */ '../views/Layout.vue'),
@@ -124,7 +105,7 @@ menuRouterList = [
         name: 'pointsOrder',
         component: () => import(/* webpackChunkName: "about" */ '../components/order/PointsOrder.vue'),
         meta: {
-          title: '出库订单'
+          title: '售后订单'
         }
       }
     ]

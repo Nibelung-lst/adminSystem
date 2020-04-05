@@ -126,50 +126,51 @@
 </template>
 
 <script>
-export default {
-  name: 'pointsOrder',
-  data () {
-    return {
-      order: '',
-      baseURL:'http://10.104.131.160/',
-      tableData: []
-    }
-  },
-  created () {},
-  mounted () {
-    this._loadData()
-  },
-  methods: {
-    _loadData () {
-      this.order = this.$route.query.order
-      this.tableData = this.order.orderDetailROList
-      console.log(this.tableData)
+  export default {
+    name: 'pointsOrder',
+    data () {
+      return {
+        order: '',
+        baseURL:'http://10.104.131.160/',
+        tableData: []
+      }
+    },
+    created () {},
+    mounted () {
+      this._loadData()
+    },
+    methods: {
+      _loadData () {
+        this.order = this.$route.query.order
+        console.log(this.order)
+        this.tableData = this.order.orderDetailVOList
+        console.log(this.tableData)
+      }
     }
   }
-}
 </script>
 
 <style scoped>
-.pagination {
+  .pagination {
     text-align: right;
     margin-top: 20px;
-}
-.addressLogo {
-  float: left;
-  width: 100px;
-  height: 90px;
-  margin-left: 20px;
-}
-.logo {
-  width: 70px;
-  height: 70px;
-}
-.address {
-  float: left;
-  width: 800px;
-  margin-left: 30px;
-}
-.el-table td, .el-table th {
-  text-align: center
-}
+  }
+  .addressLogo {
+    float: left;
+    width: 100px;
+    height: 90px;
+    margin-left: 20px;
+  }
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
+  .address {
+    float: left;
+    width: 800px;
+    margin-left: 30px;
+  }
+  .el-table td, .el-table th {
+    text-align: center
+  }
 </style>

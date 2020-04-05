@@ -2,62 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d634508-52e5-4626-b025-5f7039919b52" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/admin-web/src/components/commodity/product.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/common/PageHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/AttributeDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/CategoryParentVO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/CheckDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/Page.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/ProductCategoryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/ProductDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/ProductDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/ProductSkuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/ProductSkuKeyDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/ProductSkuValueDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/SkuCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/WeChatProductSkuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/product/WeChatProductSpuDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/src/main/java/com/systm/my/controller/product/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/src/main/java/com/systm/my/controller/product/ProductSpecsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/CategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/CategoryMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/ProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyValueMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyValueMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/SkuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper/SkuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/service/procudt/ProductCategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/service/procudt/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/service/procudt/ProductSkuKeyService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/service/procudt/ProductSkuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/service/procudt/ProductSkuValueService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/serviceimpl/product/ProductCategoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/serviceimpl/product/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/serviceimpl/product/ProductSkuKeyServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/serviceimpl/product/ProductSkuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/serviceimpl/product/ProductSkuValueServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/utils/CrossUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/utils/StringUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/utils/exception/ProductException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/CancelOrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/CountOrdersByDayVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/CountOrdersByStatusVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/CreateBrokerMessageLogDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/CreatedOrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/CreatedOrderDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/OrderDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/OrderDetailDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/OrderDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/OrderDetailVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/OrderFailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/OrderMonthSalesVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/OrderVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/SearchOrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/ShopCartDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/ShopCartVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/SpuMonthSalesVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/StatisticalSpuSaleDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/UpdateBrokerMessageLogDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/base/order/dto/UserParamDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/base/src/main/java/com/system/my/enums/order/OrderStatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/src/main/java/com/systm/my/controller/order/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/src/main/java/com/systm/my/controller/order/ao/SearchOrderAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/src/main/java/com/systm/my/controller/order/ao/StatisticalSpuSaleAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/orderMapper/OrderDetailMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/orderMapper/OrderDetailMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/orderMapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/orderMapper/OrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/service/order/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/serviceimpl/order/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/system/my/utils/Global.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin-web/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/47c97951c25ce246968b8be85e97c5aa.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/47c97951c25ce246968b8be85e97c5aa.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/83750eb09a0d2b84dd1bd73a77b3e56b.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/83750eb09a0d2b84dd1bd73a77b3e56b.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/987c35c0059ebe65954c174a33c5d081.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/987c35c0059ebe65954c174a33c5d081.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/d281c8543f4c9972b75c6ed22f9a7894.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/babel-loader/d281c8543f4c9972b75c6ed22f9a7894.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/1f51f2dd6ef7bc5e0a6ab71a561bdc51.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/1f51f2dd6ef7bc5e0a6ab71a561bdc51.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/9379cb7fe057afe57440965844f51316.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/9379cb7fe057afe57440965844f51316.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/a3eab9642b57a777308d933fd26212c0.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/a3eab9642b57a777308d933fd26212c0.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/c41180b9b3a7788897020855b83c8742.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/c41180b9b3a7788897020855b83c8742.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/deee3be164e4b74ca2960ebcc08bd1b9.json" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/node_modules/.cache/vue-loader/deee3be164e4b74ca2960ebcc08bd1b9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/src/api/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/api/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin-web/src/components/product/ProductSpu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/components/product/ProductSpu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-web/src/components/Statistics/OrderStatistics.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/components/Statistics/OrderStatistics.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-web/src/components/Statistics/SpuStatistics.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/components/Statistics/SpuStatistics.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-web/src/components/order/OrderDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/components/order/OrderDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-web/src/components/order/PointsOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/components/order/PointsOrder.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin-web/src/router/menuRouterList.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/router/menuRouterList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/src/main/java/com/systm/my/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/controller/src/main/java/com/systm/my/utils/JwtUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/target/classes/com/systm/my/utils/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/controller/target/classes/com/systm/my/utils/JwtUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-web/src/views/Order.vue" beforeDir="false" afterPath="$PROJECT_DIR$/admin-web/src/views/Order.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,8 +69,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -122,30 +105,30 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/productMapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mapper/src/main/java/com/system/my/mapper/orderMapper" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\system\mapper\src\main\java\com\system\my\mapper\productMapper" />
-      <recent name="C:\system\mapper\src\main\java\com\system\my\mapper\roleMapper" />
-      <recent name="C:\system\controller\src\main\java\com\systm\my\utils" />
-      <recent name="C:\system\mapper\src\main\java\com\system\my\mapper\menuMapper" />
-      <recent name="C:\system\mapper\src\main\java\com\system\my\mapper\hrMapper" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.systm.my.controller.product" />
-      <recent name="com.system.my.base.product" />
-      <recent name="com.system.my.utils" />
-      <recent name="com.system.my.serviceimpl.product" />
-      <recent name="com.system.my.service.procudt" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\system\mapper\src\main\java\com\system\my\mapper" />
       <recent name="C:\system\mapper\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.systm.my.controller.order.ao" />
+      <recent name="com.systm.my.controller.order" />
+      <recent name="com.system.my.enums.order" />
+      <recent name="com.system.my.utils" />
+      <recent name="com.system.my.serviceimpl.order" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\system\mapper\src\main\java\com\system\my\mapper\orderMapper" />
+      <recent name="C:\system\base\src\main\java\com\system\my\base\order\dto" />
+      <recent name="C:\system\base\src\main\java\com\system\my\base\order" />
+      <recent name="C:\system\mapper\src\main\java\com\system\my\mapper\order" />
+      <recent name="C:\system\mapper\src\main\java\com\system\my\mapper\productMapper" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ControllerApplication">
@@ -242,6 +225,7 @@
       <workItem from="1585799057978" duration="4838000" />
       <workItem from="1585875659792" duration="9132000" />
       <workItem from="1585967430364" duration="20553000" />
+      <workItem from="1586054484371" duration="10709000" />
     </task>
     <task id="LOCAL-00001" summary="后台">
       <created>1585649646222</created>
@@ -250,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585649646222</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="商品模块">
+      <created>1586054842842</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586054842842</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +259,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="后台" />
-    <option name="LAST_COMMIT_MESSAGE" value="后台" />
+    <MESSAGE value="商品模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品模块" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="90" key="#Inspections" timestamp="1585362648450">
@@ -283,10 +275,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="117" y="112" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1585975597573" />
-    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1585987143620">
+    <state x="525" y="234" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586067913619">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1585987143620" />
+    <state x="525" y="234" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.864@0.0.1536.864" timestamp="1586067913619" />
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser" timestamp="1586067760316">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="574" y="141" key="#com.intellij.ide.util.MemberChooser/0.0.1536.864@0.0.1536.864" timestamp="1586067760316" />
     <state x="554" y="274" width="439" height="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585378351709">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -299,18 +295,18 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="499" y="178" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1585212765423" />
-    <state x="372" y="24" key="CommitChangelistDialog2" timestamp="1585649531631">
+    <state x="372" y="24" key="CommitChangelistDialog2" timestamp="1586054840764">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="372" y="24" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1585649531631" />
-    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog" timestamp="1585974797683">
+    <state x="372" y="24" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1586054840764" />
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog" timestamp="1586054794254">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1585974797683" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1585967481649">
+    <state x="93" y="93" width="1350" height="678" key="DiffContextDialog/0.0.1536.864@0.0.1536.864" timestamp="1586054794254" />
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1586065181239">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1585967481649" />
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1586065181239" />
     <state x="589" y="328" width="382" height="208" key="Github.CreateGistDialog" timestamp="1585032956155">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -323,38 +319,38 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="644" y="322" width="272" height="271" key="Github.ShareDialog/0.0.1536.864@0.0.1536.864" timestamp="1585649172038" />
-    <state width="1493" height="70" key="GridCell.Tab.0.bottom" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.0.bottom" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
-    <state width="1493" height="70" key="GridCell.Tab.0.center" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
+    <state width="1493" height="383" key="GridCell.Tab.0.center" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
-    <state width="1493" height="70" key="GridCell.Tab.0.left" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
+    <state width="1493" height="383" key="GridCell.Tab.0.left" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
-    <state width="1493" height="70" key="GridCell.Tab.0.right" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
+    <state width="1493" height="383" key="GridCell.Tab.0.right" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
-    <state width="1493" height="70" key="GridCell.Tab.1.bottom" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
+    <state width="1493" height="383" key="GridCell.Tab.1.bottom" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
-    <state width="1493" height="70" key="GridCell.Tab.1.center" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
+    <state width="1493" height="383" key="GridCell.Tab.1.center" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
-    <state width="1493" height="70" key="GridCell.Tab.1.left" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
+    <state width="1493" height="383" key="GridCell.Tab.1.left" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
-    <state width="1493" height="70" key="GridCell.Tab.1.right" timestamp="1585996855925">
+    <state width="1493" height="383" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
+    <state width="1493" height="383" key="GridCell.Tab.1.right" timestamp="1586069384332">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="70" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1585996855925" />
+    <state width="1493" height="383" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1586069384332" />
     <state width="1493" height="70" key="GridCell.Tab.2.bottom" timestamp="1585996855926">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -383,10 +379,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="274" y="58" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1585364424960" />
-    <state x="357" y="0" key="Vcs.Push.Dialog.v2" timestamp="1585652143843">
+    <state x="357" y="0" key="Vcs.Push.Dialog.v2" timestamp="1586054851270">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="357" y="0" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1585652143843" />
+    <state x="357" y="0" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1586054851270" />
     <state x="449" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1586054484405">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

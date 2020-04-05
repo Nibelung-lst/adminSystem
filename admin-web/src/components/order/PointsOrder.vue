@@ -7,7 +7,7 @@
             <el-col :span="4">
               <el-breadcrumb separator-class="el-icon-arrow-right">
                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item>出库订单列表</el-breadcrumb-item>
+                <el-breadcrumb-item>积分订单列表</el-breadcrumb-item>
               </el-breadcrumb>
             </el-col>
           </el-row>
@@ -38,8 +38,8 @@
           <!-- 查询按钮、重置按钮 -->
           <el-form-item>
             <el-button-group>
-               <el-button type="primary" @click="handleSelect()">查询</el-button>
-               <el-button @click="handleReset()">重置</el-button>
+              <el-button type="primary" @click="handleSelect()">查询</el-button>
+              <el-button @click="handleReset()">重置</el-button>
             </el-button-group>
           </el-form-item>
         </el-form>
@@ -100,8 +100,8 @@
         </el-table-column>
         <el-table-column label="操作" fixed="right" align="center">
           <template slot-scope="scope">
-            <el-button v-if="scope.row.status === 1 && arr.includes('CANCEL_ORDER')" type="danger" plain size="mini"  @click="handleCancel(scope.$index, scope.row)">取消订单</el-button>
-            <el-button v-else-if="scope.row.status === 2 && arr.includes('DELIVER_ORDER')" type="warning" plain size="mini"  @click="handleDeliver(scope.$index, scope.row)">点击发货</el-button>
+            <el-button v-if="scope.row.status === 1 " type="danger" plain size="mini"  @click="handleCancel(scope.$index, scope.row)">取消订单</el-button>
+            <el-button v-else-if="scope.row.status === 2 " type="warning" plain size="mini"  @click="handleDeliver(scope.$index, scope.row)">点击发货</el-button>
             <el-button v-else-if="scope.row.status === 5" type="success" plain size="mini">交易完成</el-button>
             <el-button v-else type="info" plain size="mini">无</el-button>
           </template>
@@ -110,12 +110,12 @@
       <!-- 分页栏 -->
       <div class="pagination">
         <el-pagination @size-change="handleSizeChange"
-                      @current-change="handleCurrentChange"
-                      :current-page="currentPage"
-                      :page-sizes="[10, 20, 30, 40]"
-                      :page-size="pageSize"
-                      layout="total, sizes, prev, pager, next, jumper"
-                      :total="count">
+                       @current-change="handleCurrentChange"
+                       :current-page="currentPage"
+                       :page-sizes="[10, 20, 30, 40]"
+                       :page-size="pageSize"
+                       layout="total, sizes, prev, pager, next, jumper"
+                       :total="count">
         </el-pagination>
       </div>
     </el-card>
@@ -123,155 +123,155 @@
 </template>
 
 <script>
-import { reqListOrders, reqCancelOrder, reqDeliverOrder } from '../../api/order.js'
-export default {
-  name: 'pointsOrder',
-  data () {
-    return {
-      arr:[],
-      count: 0,
-      pageSize: 10,
-      currentPage: 1,
-      status: '',
-      searchContent: '',
-      tableData: [],
-      options: [
-        {
-          value: '',
-          label: '全部订单'
-        }, {
-          value: '-1',
-          label: '已取消订单'
-        }, {
-          value: '1',
-          label: '待付款订单'
-        }, {
-          value: '2',
-          label: '待发货订单'
-        }, {
-          value: '3',
-          label: '待收货订单'
-        }, {
-          value: '4',
-          label: '待评价订单'
-        }, {
-          value: '5',
-          label: '已成交订单'
-        }]
-    }
-  },
-  created () {
-    this.handleShowButton()
-  },
-  mounted () {
-    this._loadData()
-  },
-  methods: {
-    handleShowButton(){
-      this.arr =  localStorage.getItem("ButtonList");
-    },
-    _loadData () {
-      let params = {
-        pageSize: this.pageSize,
-        pageNum: this.currentPage,
-        type: 2,
-        status: this.status,
-        keyword: this.searchContent
+  import { reqListOrders, reqCancelOrder, reqDeliverOrder } from '../../api/order.js'
+  export default {
+    name: 'pointsOrder',
+    data () {
+      return {
+        arr:[],
+        count: 0,
+        pageSize: 10,
+        currentPage: 1,
+        status: '',
+        searchContent: '',
+        tableData: [],
+        options: [
+          {
+            value: '',
+            label: '全部订单'
+          }, {
+            value: '-1',
+            label: '已取消订单'
+          }, {
+            value: '1',
+            label: '待付款订单'
+          }, {
+            value: '2',
+            label: '待发货订单'
+          }, {
+            value: '3',
+            label: '待收货订单'
+          }, {
+            value: '4',
+            label: '待评价订单'
+          }, {
+            value: '5',
+            label: '已成交订单'
+          }]
       }
-      reqListOrders(params).then(res => {
-        if (res.code === 0 && res.data != null) {
-          this.count = res.data.count
-          this.tableData = res.data.content
-          console.log(this.tableData)
-        }
-      })
     },
-    // 每页几条数据变化
-    handleSizeChange (val) {
-      this.pageSize = val
+    created () {
+      this.handleShowButton()
     },
-    // 当前页变化
-    handleCurrentChange (val) {
-      this.currentPage = val
+    mounted () {
       this._loadData()
     },
-    // 根据搜索框关键字查询
-    handleSelect () {
-      this.status = this.status
-      this._loadData()
-    },
-    handleReset () {
-      this.searchContent = ''
-      this.status = ''
-      this._loadData()
-    },
-    handleCancel (index, row) {
-      this.$confirm('是否取消订单?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
+    methods: {
+      handleShowButton(){
+        this.arr =  localStorage.getItem("ButtonList");
+      },
+      _loadData () {
         let params = {
-          orderCode: row.orderCode,
-          cancelReason: '后台取消订单'
+          pageSize: this.pageSize,
+          pageNum: this.currentPage,
+          type: 2,
+          status: this.status,
+          keyword: this.searchContent
         }
-        reqCancelOrder(params).then(res => {
-          if (res.code === 0) {
-            this.$message({
-              type: 'success',
-              message: '取消订单成功!'
-            })
-            this._loadData()
+        reqListOrders(params).then(res => {
+          if (res.status === 200 && res.data != null) {
+            this.count = res.data.count
+            this.tableData = res.data.content
+            console.log(this.tableData)
           }
         })
-      }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '暂不取消订单'
+      },
+      // 每页几条数据变化
+      handleSizeChange (val) {
+        this.pageSize = val
+      },
+      // 当前页变化
+      handleCurrentChange (val) {
+        this.currentPage = val
+        this._loadData()
+      },
+      // 根据搜索框关键字查询
+      handleSelect () {
+        this.status = this.status
+        this._loadData()
+      },
+      handleReset () {
+        this.searchContent = ''
+        this.status = ''
+        this._loadData()
+      },
+      handleCancel (index, row) {
+        this.$confirm('是否取消订单?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          let params = {
+            orderCode: row.orderCode,
+            cancelReason: '后台取消订单'
+          }
+          reqCancelOrder(params).then(res => {
+            if (res.status === 200) {
+              this.$message({
+                type: 'success',
+                message: '取消订单成功!'
+              })
+              this._loadData()
+            }
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '暂不取消订单'
+          })
         })
-      })
-    },
-    handleDeliver (index, row) {
-      this.$confirm('是否发货?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-        type: 'warning'
-      }).then(() => {
-        let params = 'orderCode=' + row.orderCode
-        reqDeliverOrder(params).then(res => {
-          if (res.code === 0) {
-            this.$message({
-              type: 'success',
-              message: '发货成功!'
-            })
-            this._loadData()
+      },
+      handleDeliver (index, row) {
+        this.$confirm('是否发货?', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          let params = 'orderCode=' + row.orderCode
+          reqDeliverOrder(params).then(res => {
+            if (res.status === 200) {
+              this.$message({
+                type: 'success',
+                message: '发货成功!'
+              })
+              this._loadData()
+            }
+          })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '暂不发货'
+          })
+        })
+      },
+      handleOrderDetail (index, row) {
+        this.$router.push({
+          path: '/layout/orderDetail',
+          query: {
+            order: row
           }
         })
-      }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '暂不发货'
-        })
-      })
-    },
-    handleOrderDetail (index, row) {
-      this.$router.push({
-        path: '/layout/orderDetail',
-        query: {
-          order: row
-        }
-      })
+      }
     }
   }
-}
 </script>
 
 <style scoped>
-.pagination {
+  .pagination {
     text-align: right;
     margin-top: 20px;
   }
-.demo-table-expand {
+  .demo-table-expand {
     font-size: 0;
   }
   .demo-table-expand label {

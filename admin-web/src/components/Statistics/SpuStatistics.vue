@@ -122,7 +122,7 @@ export default {
     },
     _loadData () {
       reqListYears().then(res => {
-        if (res.code === 0 && res.data != null) {
+        if (res.status === 200 && res.data != null) {
           let i = 0
           let arr = []
           res.data.forEach (e => {
@@ -141,7 +141,7 @@ export default {
         month: this.month
       }
       reqListSpuMonthSales(params).then(res => {
-        if (res.code === 0 && res.data != null) {
+        if (res.status === 200 && res.data != null) {
           let nameArr = []
           let countArr = []
           let saleArr = []

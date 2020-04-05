@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.system.my.mapper.orderMapper.OrderDetailMapper">
+    <sql id="OrderDetailMap">
+        spu_code as spuCode,
+        spu_name as spuName,
+        sku_code as skuCode,
+        sku_name as skuName,
+        specs as specs,
+        sku_num as skuNum,
+        sku_image as skuImage,
+        origin_price as originPrice,
+        current_price as currentPrice
+    </sql>
+
+    <!--  获取订单详情  -->
+    <select id="listOrderDetails" resultType="com.system.my.base.order.dto.OrderDetailVO">
+        select
+        <include refid="OrderDetailMap"/>
+        from t_order_detail
+        where t_order_detail.order_code = #{orderCode}
+    </select>
+
+</mapper>
