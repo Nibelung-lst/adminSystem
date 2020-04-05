@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.system.my.mapper.productMapper.SkuKeyMapper" >
+  <resultMap id="BaseResultMap" type="com.system.my.base.product.ProductSkuKeyDTO" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="spu_code" property="spuCode" jdbcType="CHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="creator_id" property="creatorId" jdbcType="BIGINT" />
+    <result column="creator_name" property="creatorName" jdbcType="VARCHAR" />
+    <result column="creator_time" property="creatorTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_id" property="lastModifyId" jdbcType="BIGINT" />
+    <result column="last_modify_name" property="lastModifyName" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, spu_code, name, creator_id, creator_name, creator_time, last_modify_id,
+    last_modify_name, last_modify_time
+  </sql>
+  <select id="selectBySpuCode" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from t_product_specs_key
+    where spu_code = #{spuCode}
+  </select>
+  <select id="selectIdByName" resultType="java.lang.Long" parameterType="java.lang.String">
+    select
+    id
+    from t_product_specs_key
+    where name = #{name}
+  </select>
+  <select id="checkExist" resultMap="BaseResultMap" parameterType="com.system.my.base.product.CheckDTO">
+    select
+    <include refid="Base_Column_List" />
+    from t_product_specs_key
+    where name = #{name} and spu_code = #{condition}
+  </select>
+  <select id="selectKeyById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_product_specs_key
+    where id = #{id}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_product_specs_key
+    where id = #{id}
+  </delete>
+  <insert id="addSkuKey" parameterType="com.system.my.base.product.ProductSkuKeyDTO" >
+    insert into t_product_specs_key(spu_code, name, creator_id, creator_name, creator_time, last_modify_id, last_modify_name, last_modify_time)
+    values( #{spuCode},
+        #{name}, #{creatorId}, #{creatorName},
+        #{creatorTime}, #{lastModifyId}, #{lastModifyName},
+        #{lastModifyTime})
+  </insert>
+  <update id="update" parameterType="com.system.my.base.product.ProductSkuKeyDTO" >
+    update t_product_specs_key
+    <set>
+      <if test="spuCode != null">
+        spu_code = #{spuCode}
+      </if>
+      <if test="name != null">
+        name = #{name}
+      </if>
+      <if test="creatorId != null">
+        creator_id = #{creatorId}
+      </if>
+      <if test="creatorName != null">
+        creator_name = #{creatorName}
+    </if>
+      <if test="creatorTime != null">
+        creator_time = #{creatorTime}
+      </if>
+      <if test="lastModifyId != null">
+        last_modify_id = #{lastModifyId}
+      </if>
+      <if test="lastModifyName != null">
+        last_modify_name = #{lastModifyName}
+      </if>
+      <if test="lastModifyTime != null">
+        last_modify_time = #{lastModifyTime}
+      </if>
+    </set>
+    where id = #{id}
+  </update>
+</mapper>

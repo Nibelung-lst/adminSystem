@@ -29,28 +29,11 @@ public class JwtUtils {
 
     private static HashMap<String, Authentication> hashMap = new HashMap<>();
 
-    private static void CompareStringByChar(String msg1,String msg2)
-    {
-        //字符串转list<String>
-        List<String> lis = Arrays.asList(msg1.split(","));
-        List<String> lis2 = Arrays.asList(msg2.split(","));
-        List<String> list;
-        if (lis.size() >= lis2.size()){
-            list= lis.stream().filter(t-> !lis2.contains(t)).collect(Collectors.toList());
-        }else {
-            list= lis2.stream().filter(t-> !lis.contains(t)).collect(Collectors.toList());
-        }
-        if (CollectionUtils.isEmpty(list)){
-            System.out.println("相等");
-        }else {
-            System.out.println("不相等");
-        }
-    }
+
 
     public static void main(String[] args) {
         String a = "123,23,34";
         String b = "123,34,23,25";
-        CompareStringByChar(a,b);
 
     }
     /**

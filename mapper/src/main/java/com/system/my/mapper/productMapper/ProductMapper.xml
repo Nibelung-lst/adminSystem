@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.system.my.mapper.productMapper.ProductMapper">
+  <resultMap id="BaseResultMap" type="com.system.my.base.product.ProductDTO">
+    <result column="spu_code" jdbcType="CHAR" property="spuCode" />
+    <result column="category_code" jdbcType="CHAR" property="categoryCode" />
+    <result column="brand_code" jdbcType="CHAR" property="brandCode" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="spu_name" jdbcType="VARCHAR" property="spuName" />
+    <result column="spu_describe" jdbcType="VARCHAR" property="spuDescribe" />
+    <result column="default_sku_code" jdbcType="VARCHAR" property="defaultSkuCode" />
+    <result column="status" jdbcType="BIT" property="status" />
+    <result column="creator_id" jdbcType="BIGINT" property="creatorId" />
+    <result column="creator_name" jdbcType="VARCHAR" property="creatorName" />
+    <result column="creator_time" jdbcType="TIMESTAMP" property="creatorTime" />
+    <result column="last_modify_id" jdbcType="BIGINT" property="lastModifyId" />
+    <result column="last_modify_name" jdbcType="VARCHAR" property="lastModifyName" />
+    <result column="last_modify_time" jdbcType="TIMESTAMP" property="lastModifyTime" />
+  </resultMap>
+
+  <sql id="queryParam">
+    <where>
+      <if test="spuName != null">
+        spu_name like concat('%',#{spuName},'%')
+      </if>
+      <if test="spuCode != null" >
+        spu_code like concat('%',#{spuCode},'%')
+      </if>
+    </where>
+  </sql>
+
+  <sql id="Base_Column_List">
+    spu_code, category_code, brand_code, brand_name, spu_name, spu_describe, default_sku_code,
+    status, creator_id, creator_name, creator_time, last_modify_id, last_modify_name, 
+    last_modify_time
+  </sql>
+
+  <select id="selectSpu" resultMap="BaseResultMap" parameterType="com.system.my.base.product.Page">
+    select
+    <include refid="Base_Column_List" />
+    from
+    t_product_spu
+    limit ${start},${size}
+  </select>
+
+  <select id="countSpu" resultType="java.lang.Integer">
+    select
+    count(*)
+    from t_product_spu
+  </select>
+
+  <select id="selectSpuByRandom" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    spu_code, category_code, brand_code, brand_name, spu_name, spu_describe, default_sku_code,
+    status, creator_id, creator_name, creator_time, last_modify_id, last_modify_name,
+    last_modify_time
+    FROM t_product_spu
+    WHERE id >= (SELECT floor(RAND() * (SELECT MAX(id) FROM t_product)))  and status = '1'
+    ORDER BY id LIMIT ${randomNumber}
+  </select>
+
+  <select id="countByKeyWord" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from t_product_spu
+    where spu_name like concat('%',#{keyWord},'%')
+  </select>
+
+  <select id="selectSpuByKeyWordPage" resultMap="BaseResultMap" parameterType="com.system.my.base.product.Page">
+    select
+    <include refid="Base_Column_List" />
+    from
+    t_product_spu
+    where spu_name like concat('%',#{condition},'%')
+    limit ${start},${size}
+  </select>
+
+  <select id="selectSpuByKeyWord" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from
+    t_product_spu
+    where spu_name like concat('%',#{keyWord},'%') or spu_code like concat('%',#{keyWord},'%')
+  </select>
+
+  <select id="countByCategoryCode" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from t_product_spu
+    where category_code = #{categoryCode}
+  </select>
+  <select id="selectSpuBySpuCode" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_product_spu
+    where spu_code = #{spuCode}
+  </select>
+  <select id="selectByCategoryCode" parameterType="com.system.my.base.product.Page" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_product_spu
+    where category_code = #{condition}
+    limit ${start},${size}
+  </select>
+  <select id="spuCodeCheck" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from
+    t_product_spu
+    where spu_code = #{spuCode}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_product_spu
+    where id = #{id}
+  </delete>
+  <insert id="addProductSpu" parameterType="com.system.my.base.product.ProductDTO">
+    insert into t_product_spu
+        (spu_code, category_code, brand_code, brand_name, spu_name,
+        spu_describe, default_sku_code, status, creator_id, creator_name, creator_time,
+        last_modify_id, last_modify_name, last_modify_time)
+        values ( #{spuCode}, #{categoryCode},
+        #{brandCode}, #{brandName}, #{spuName},
+        #{spuDescribe}, #{defaultSkuCode}, #{status}, #{creatorId},
+        #{creatorName}, #{creatorTime}, #{lastModifyId}, #{lastModifyName}, #{lastModifyTime})
+  </insert>
+  <update id="updateBySpuCode" parameterType="com.system.my.base.product.ProductDTO">
+    update t_product_spu
+    <set>
+      <if test="categoryCode != null">
+        category_code = #{categoryCode}
+      </if>
+      <if test="brandCode != null">
+        brand_code = #{brandCode}
+      </if>
+      <if test="brandName != null">
+        brand_name = #{brandName}
+      </if>
+      <if test="spuName != null">
+        spu_name = #{spuName}
+      </if>
+      <if test="spuDescribe != null">
+        spu_describe = #{spuDescribe}
+      </if>
+      <if test="defaultSkuCode != null">
+        default_sku_code = #{defaultSkuCode}
+      </if>
+      <if test="status != null" >
+        status = #{status}
+      </if>
+      <if test="creatorId != null" >
+        creator_id = #{creatorId}
+      </if>
+      <if test="creatorName != null">
+        creator_name = #{creatorName}
+      </if>
+      <if test="creatorTime != null">
+        creator_time = #{creatorTime}
+      </if>
+      <if test="lastModifyId != null" >
+        last_modify_id = #{lastModifyId}
+      </if>
+      <if test="lastModifyName != null" >
+        last_modify_name = #{lastModifyName}
+      </if>
+      <if test="lastModifyTime" >
+        last_modify_time = #{lastModifyTime}
+      </if>
+    </set>
+    where spu_code = #{spuCode}
+  </update>
+  </mapper>

@@ -233,7 +233,7 @@ export default {
         spuCode: '',
         spuName: '',
         spuDescribe: '',
-        brandCode: '',
+        brandName: '',
         status: false
       },
       parentCategoryList: [

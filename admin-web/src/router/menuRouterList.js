@@ -84,8 +84,8 @@ menuRouterList = [
     ]
   },
   {
-    path: '/product',
-    name: 'product',
+    path: '/commodity',
+    name: 'commodity',
     component: () => import(/* webpackChunkName: "about" */ '../views/Layout.vue'),
     meta: {
       title: '商品管理',
@@ -95,17 +95,9 @@ menuRouterList = [
       {
         path: 'category',
         name: 'productCategory',
-        component: () => import(/* webpackChunkName: "about" */ '../components/product/Category.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/commodity/product.vue'),
         meta: {
           title: '商品管理'
-        }
-      },
-      {
-        path: 'brand',
-        name: 'productBrand',
-        component: () => import(/* webpackChunkName: "about" */ '../components/product/Brand.vue'),
-        meta: {
-          title: '品牌管理'
         }
       },
     ]

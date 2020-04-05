@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.system.my.mapper.productMapper.SkuMapper" >
+  <resultMap id="BaseResultMap" type="com.system.my.base.product.ProductSkuDTO" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="spu_code" property="spuCode" jdbcType="CHAR" />
+    <result column="sku_code" property="skuCode" jdbcType="CHAR" />
+    <result column="unique_code" property="uniqueCode" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sku_describe" property="describe" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="BIT" />
+    <result column="default_markup" property="defaultMarkup" jdbcType="BIT" />
+    <result column="origin_price" property="originPrice" jdbcType="DECIMAL" />
+    <result column="current_price" property="currentPrice" jdbcType="DECIMAL" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
+    <result column="creator_id" property="creatorId" jdbcType="BIGINT" />
+    <result column="creator_name" property="creatorName" jdbcType="VARCHAR" />
+    <result column="creator_time" property="creatorTime" jdbcType="TIMESTAMP" />
+    <result column="last_modify_id" property="lastModifyId" jdbcType="BIGINT" />
+    <result column="last_modify_name" property="lastModifyName" jdbcType="VARCHAR" />
+    <result column="last_modify_time" property="lastModifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <resultMap id="SkuCode" type="com.system.my.base.product.SkuCode">
+    <result column="sku_code" property="skuCode" jdbcType="CHAR"/>
+  </resultMap>
+  <select id="selectSkuBySpuCode" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+        id, default_markup,spu_code,sku_code ,unique_code, name,sku_describe, status, origin_price, current_price, image,
+    creator_id, creator_name, creator_time, last_modify_id, last_modify_name, last_modify_time
+    from t_product_sku
+    where spu_code = #{spuCode} and default_markup = 0
+  </select>
+  <select id="selectSkuCodeBySpuCode" resultMap="SkuCode" parameterType="java.lang.String">
+    select
+    sku_code
+    from t_product_sku
+    where spu_code = #{spuCode} and default_markup = 0
+  </select>
+  <select id="selectImageBySkuCode" resultType="java.lang.String" parameterType="java.lang.String">
+    select
+    image
+    from t_product_sku
+    where sku_code = #{skuCode}
+  </select>
+  <select id="countAllSkuBySpuCode" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from t_product_sku
+    where spu_code = #{spuCode}
+  </select>
+  <select id="countByCategoryCode" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select
+    count(*)
+    from t_product_sku
+    where spu_code = #{spuCode} and default_markup = 0
+  </select>
+  <select id="selectBySpuCode" resultMap="BaseResultMap" parameterType="com.system.my.base.product.Page">
+    select
+    id, default_markup,spu_code,sku_code ,unique_code, name,sku_describe, status, origin_price, current_price, image,
+    creator_id, creator_name, creator_time, last_modify_id, last_modify_name, last_modify_time
+    from t_product_sku
+    where spu_code = #condition# and default_markup = 0
+    limit ${start},${size}
+  </select>
+  <sql id="Base_Column_List" >
+    id, default_markup,spu_code,sku_code ,unique_code, name,sku_describe, status, origin_price, current_price, image,
+    creator_id, creator_name, creator_time, last_modify_id, last_modify_name, last_modify_time
+  </sql>
+  <select id="selectSkuBySkuCode" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from t_product_sku
+    where sku_code = #{skuCode}
+  </select>
+  <select id="selectSkuByUniqueCode" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from t_product_sku
+    where unique_code = #{uniqueCode}
+  </select>
+  <insert id="addProductSku" parameterType="com.system.my.base.product.ProductSkuDTO" >
+    insert into t_product_sku( spu_code, sku_code, unique_code, name, sku_describe, status, origin_price, default_markup,
+        current_price, image, creator_id, creator_name, last_modify_id, last_modify_name)
+    values ( #{spuCode}, #{skuCode}, #{uniqueCode},
+        #{name}, #{describe}, #{status}, #{originPrice},#{defaultMarkup},
+        #{currentPrice}, #{image}, #{creatorId}, #{creatorName}, #{lastModifyId},
+        #{lastModifyName})
+  </insert>
+  <update id="updateSkuBySpuCode" parameterType="com.system.my.base.product.ProductSkuDTO">
+    update t_product_sku
+    <set>
+      <if test="name != null">
+        <![CDATA[name = #{name}]]>
+      </if>
+      <if test="defaultMarkup != null">
+        <![CDATA[default_markup = #{defaultMarkup}]]>
+      </if>
+      <if test="describe != null">
+        <![CDATA[sku_describe = #{describe}]]>
+      </if>
+      <if test="status != null">
+        <![CDATA[status = #{status}]]>
+      </if>
+      <if test="originPrice != null">
+        <![CDATA[origin_price = #{originPrice}]]>
+      </if>
+      <if test="currentPrice != null" >
+        <![CDATA[current_price = #{currentPrice}]]>
+      </if>
+      <if test="image != null" >
+        <![CDATA[image = #{image}]]>
+      </if>
+      <if test="creatorId != null">
+        <![CDATA[creator_id = #{creatorId}]]>
+      </if>
+      <if test="creatorName != null">
+        <![CDATA[creator_name = #{creatorName}]]>
+      </if>
+      <if test="creatorTime != null">
+        <![CDATA[creator_time = #{creatorTime}]]>
+      </if>
+      <if test="lastModifyId != null" >
+        <![CDATA[last_modify_id = #{lastModifyId}]]>
+      </if>
+      <if test="lastModifyName != null">
+        <![CDATA[last_modify_name = #{lastModifyName}]]>
+      </if>
+      <if test="lastModifyTime != null">
+        <![CDATA[last_modify_time = #{lastModifyTime}]]>
+      </if>
+    </set>
+    where spu_code = #{spuCode} and default_markup = 0
+  </update>
+  <update id="update" parameterType="com.system.my.base.product.ProductSkuDTO" >
+    update t_product_sku
+    <set>
+      <if test="spuCode != null">
+        <![CDATA[spu_code = #{spuCode}]]>
+      </if>
+      <if test="name != null">
+        <![CDATA[name = #{name}]]>
+      </if>
+      <if test="defaultMarkup != null" >
+        <![CDATA[default_markup = #{defaultMarkup}]]>
+      </if>
+      <if test="describe != null">
+        <![CDATA[sku_describe = #{describe}]]>
+      </if>
+      <if test="status != null">
+        <![CDATA[status = #{status}]]>
+      </if>
+      <if test="originPrice != null">
+        <![CDATA[origin_price = #{originPrice}]]>
+      </if>
+      <if test="currentPrice != null">
+        <![CDATA[current_price = #{currentPrice}]]>
+      </if>
+      <if test="image != null" >
+        <![CDATA[image = #{image}]]>
+      </if>
+      <if test="creatorId != null">
+        <![CDATA[creator_id = #{creatorId}]]>
+      </if>
+      <if test="creatorName != null">
+        <![CDATA[creator_name = #{creatorName}]]>
+      </if>
+      <if test="creatorTime != null">
+        <![CDATA[creator_time = #{creatorTime}]]>
+      </if>
+      <if test="lastModifyId != null">
+        <![CDATA[last_modify_id = #{lastModifyId}]]>
+      </if>
+      <if test="lastModifyName != null">
+        <![CDATA[last_modify_name = #{lastModifyName}]]>
+      </if>
+      <if test="lastModifyTime != null">
+        <![CDATA[last_modify_time = #{lastModifyTime}]]>
+      </if>
+    </set>
+    where sku_code = #{skuCode}
+  </update>
+
+</mapper>

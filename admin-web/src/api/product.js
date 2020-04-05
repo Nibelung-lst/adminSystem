@@ -127,7 +127,7 @@ export const spuCodeCheck = (params) => {
   }).then(res => res.data)
 }
 //查找spu
-export const querySpu = (params) => {
+export const querySpuByCategory = (params) => {
   return _axios.get('/api/getSpuByCategoryCode',{
     params:{
       'categoryCode':params.categoryCode,
@@ -136,11 +136,19 @@ export const querySpu = (params) => {
     }
   }).then(res => res.data)
 }
+//查找spu
+export const querySpu = (params) => {
+  return _axios.get('/product/getSpu',{
+    params:{
+      'pageNumber':params.pageNumber,
+      'pageSize':params.pageSize
+    }
+  }).then(res => res.data)
+}
 //分页
 export const querySpuByPage = (params) => {
-  return _axios.get('/api/getSpuByCategoryCode',{
+  return _axios.get('/product/getSpu',{
     params:{
-      'categoryCode':params.categoryCode,
       'pageNumber':params.pageNumber,
       'pageSize':params.pageSize
     }
@@ -162,9 +170,17 @@ export const getBrandByCategoryCode = (params) => {
     }
   }).then(res => res.data)
 }
+//根据分类得到品牌
+export const getSkuBySpuCode = (params) => {
+  return _axios.get('/product/getSkuBySpuCode',{
+    params:{
+      'spuCode':params
+    }
+  }).then(res => res.data)
+}
 //添加spu
 export const spuAdd = (params) => {
-  return _axios.post('/api/addProductSpu',params).then(res => res.data)
+  return _axios.post('/product/addProductSpu',params).then(res => res.data)
 }
 //--------------------------SKU--------------------------------------------------
 //添加value
@@ -224,7 +240,7 @@ export const skuUpdateStatue = (params) => {
 }
 //一键创建sku
 export const createSku = (params) => {
-  return _axios.get('/api/createSku',{
+  return _axios.get('/product/createSku',{
     params:{
       'spuCode':params
     }
@@ -298,6 +314,23 @@ export const getCategoryIconImage = (params) => {
   return _axios.get('api/getIconImage',{
     params:{
       'categoryCode':params
+    }
+  }).then(res => res.data)
+}
+
+export const getAttributeBySpuCode = (params) => {
+  return _axios.get('/product/getAttribute',{
+    params:{
+      'spuCode':params
+    }
+  }).then(res => res.data)
+}
+
+export const querySku = (params) => {
+  return _axios.get('/product/getSku',{
+    params:{
+      'spuCode':params.spuCode,
+      'id':params.id
     }
   }).then(res => res.data)
 }

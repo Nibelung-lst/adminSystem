@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef114412-f9f7-4243-9d29-e09edb015e0c" name="Default Changelist" comment="" />
+    <list default="true" id="ef114412-f9f7-4243-9d29-e09edb015e0c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/commodity/product.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/common/PageHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/AttributeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/CategoryParentVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/CheckDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/ProductCategoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/ProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/ProductDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/ProductSkuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/ProductSkuKeyDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/ProductSkuValueDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/SkuCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/WeChatProductSkuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../base/src/main/java/com/system/my/base/product/WeChatProductSpuDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/src/main/java/com/systm/my/controller/product/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../controller/src/main/java/com/systm/my/controller/product/ProductSpecsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/CategoryMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/CategoryMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyValueMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/SkuKeyValueMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/SkuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mapper/src/main/java/com/system/my/mapper/productMapper/SkuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/service/procudt/ProductCategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/service/procudt/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/service/procudt/ProductSkuKeyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/service/procudt/ProductSkuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/service/procudt/ProductSkuValueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/serviceimpl/product/ProductCategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/serviceimpl/product/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/serviceimpl/product/ProductSkuKeyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/serviceimpl/product/ProductSkuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/serviceimpl/product/ProductSkuValueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/utils/CrossUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/utils/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service/src/main/java/com/system/my/utils/exception/ProductException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/47c97951c25ce246968b8be85e97c5aa.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/47c97951c25ce246968b8be85e97c5aa.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/83750eb09a0d2b84dd1bd73a77b3e56b.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/83750eb09a0d2b84dd1bd73a77b3e56b.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/987c35c0059ebe65954c174a33c5d081.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/987c35c0059ebe65954c174a33c5d081.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/babel-loader/d281c8543f4c9972b75c6ed22f9a7894.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/babel-loader/d281c8543f4c9972b75c6ed22f9a7894.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1f51f2dd6ef7bc5e0a6ab71a561bdc51.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/1f51f2dd6ef7bc5e0a6ab71a561bdc51.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9379cb7fe057afe57440965844f51316.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/9379cb7fe057afe57440965844f51316.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a3eab9642b57a777308d933fd26212c0.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/a3eab9642b57a777308d933fd26212c0.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c41180b9b3a7788897020855b83c8742.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/c41180b9b3a7788897020855b83c8742.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/vue-loader/deee3be164e4b74ca2960ebcc08bd1b9.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/vue-loader/deee3be164e4b74ca2960ebcc08bd1b9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/product/ProductSpu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/product/ProductSpu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/menuRouterList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/menuRouterList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../controller/src/main/java/com/systm/my/utils/JwtUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../controller/src/main/java/com/systm/my/utils/JwtUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../controller/target/classes/com/systm/my/utils/JwtUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/../controller/target/classes/com/systm/my/utils/JwtUtils.class" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +179,9 @@
       <workItem from="1585303531445" duration="2203000" />
       <workItem from="1585361512103" duration="39835000" />
       <workItem from="1585479881287" duration="140000" />
-      <workItem from="1585646400903" duration="2459000" />
+      <workItem from="1585646400903" duration="3225000" />
+      <workItem from="1585704702058" duration="4519000" />
+      <workItem from="1585974125200" duration="16285000" />
     </task>
     <servers />
   </component>
